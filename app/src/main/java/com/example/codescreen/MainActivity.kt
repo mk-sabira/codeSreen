@@ -2,6 +2,7 @@ package com.example.codescreen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.codescreen.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -28,10 +29,6 @@ class MainActivity : AppCompatActivity() {
         val nine = binding.btnNine
         val zero = binding.btnZero
 
-        val back = binding.btnClear
-
-
-
         one.setOnClickListener { appendOnClick("1") }
         two.setOnClickListener { appendOnClick("2") }
         three.setOnClickListener { appendOnClick("3") }
@@ -43,8 +40,10 @@ class MainActivity : AppCompatActivity() {
         nine.setOnClickListener { appendOnClick("9") }
         zero.setOnClickListener { appendOnClick("0") }
 
+        val back = binding.btnClear
         back.setOnClickListener {
-            back()
+            Toast.makeText(this, "image button work", Toast.LENGTH_LONG).show()
+            clear()
         }
 
     }
@@ -53,12 +52,8 @@ class MainActivity : AppCompatActivity() {
         input.append(string)
     }
 
-    private fun back(){
-        var number = binding.etCode.text.toString()
-        if (number.isNotEmpty()){
-            number.substring(0, number.length - 1)
-        }
+    private fun clear(){
+        val etCode = binding.etCode.text
+        if (etCode.isNotEmpty()) etCode.text = etCode.substring(0, etCode.length -1 )
     }
-
-
 }

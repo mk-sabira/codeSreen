@@ -12,9 +12,15 @@
         android:layout_height="48dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="152dp"
+        android:cursorVisible="false"
         android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:maxLength="5"
+        android:minEms="5"
+        android:textSize="16dp"
         android:hint="Введите ваш код"
-        android:inputType="none"
+        android:inputType="none|numberPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
